@@ -2,7 +2,7 @@
 #include <linux/types.h>
 
 extern bool printk_disable_uart;
-#if 1
+#if 0
 #define TIME_LOG_START() \
     { \
     	 unsigned long long _start_time = 0; \
