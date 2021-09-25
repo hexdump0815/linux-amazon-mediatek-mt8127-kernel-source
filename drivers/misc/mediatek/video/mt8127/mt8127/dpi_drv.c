@@ -218,7 +218,7 @@ static irqreturn_t _DPI_InterruptHandler(int irq, void *dev_id)
 	dpi_vsync_irq_count++;
 	if(dpi_vsync_irq_count > 120)
 	{
-		printk("dpi vsync\n");
+//		printk("dpi vsync\n");
 		dpi_vsync_irq_count = 0;
 	}
         if(dpiIntCallback)
