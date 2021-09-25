@@ -15,9 +15,9 @@
 *                                 M A C R O S
 ********************************************************************************
 */
-#define CMB_STUB_LOG_INFO(fmt, arg...) pr_warn(fmt, ##arg)
-#define CMB_STUB_LOG_WARN(fmt, arg...) pr_err(fmt, ##arg)
-#define CMB_STUB_LOG_DBG(fmt, arg...) pr_warn(fmt, ##arg)
+#define CMB_STUB_LOG_INFO(fmt, arg...) pr_info(fmt, ##arg)
+#define CMB_STUB_LOG_WARN(fmt, arg...) pr_warn(fmt, ##arg)
+#define CMB_STUB_LOG_DBG(fmt, arg...) pr_debug(fmt, ##arg)
 
 
 /*******************************************************************************

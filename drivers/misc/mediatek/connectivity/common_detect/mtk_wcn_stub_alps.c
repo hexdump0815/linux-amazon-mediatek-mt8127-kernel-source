@@ -305,10 +305,10 @@ signed long mtk_wcn_cmb_stub_query_ctrl()
 	{
 		temp = (*cmb_stub_thermal_ctrl_cb)();
 	}
-	else
-	{
-		CMB_STUB_LOG_DBG("[cmb_stub] thermal_ctrl_cb null\n");
-	}
+//	else
+//	{
+//		CMB_STUB_LOG_DBG("[cmb_stub] thermal_ctrl_cb null\n");
+//	}
 
 	return temp;
 }
