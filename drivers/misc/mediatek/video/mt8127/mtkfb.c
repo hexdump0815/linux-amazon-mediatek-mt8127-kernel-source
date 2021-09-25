@@ -63,6 +63,8 @@
 
 //#undef pr_info
 //#define pr_info printk
+#undef pr_info
+#define pr_info(fmt, args...) do {} while (0)
 
 unsigned int EnableVSyncLog = 0;
 
