@@ -39,7 +39,7 @@
 #ifdef CONFIG_USB_MTK_HDRC_HCD
 void tbl_charger_otg_vbus(int mode)
 {
-    xlog_printk(ANDROID_LOG_INFO, "Power/Battery", "[tbl_charger_otg_vbus] mode = %d\n", mode);
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/Battery", "[tbl_charger_otg_vbus] mode = %d\n", mode);
 
     if(mode&0xFF)
     {

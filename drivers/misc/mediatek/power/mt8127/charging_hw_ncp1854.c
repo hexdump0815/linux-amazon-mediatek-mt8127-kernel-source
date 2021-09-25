@@ -498,7 +498,7 @@ static void hw_bc11_dump_register(void)
  	kal_uint32 status = STATUS_OK;
 
     if (Enable_BATDRV_LOG == 1) {
-        xlog_printk(ANDROID_LOG_INFO, "Power/Battery", "[BATTERY:ncp1854] ChargerHwInit_ncp1854\n" );
+        xlog_printk(ANDROID_LOG_DEBUG, "Power/Battery", "[BATTERY:ncp1854] ChargerHwInit_ncp1854\n" );
     }
 
     ncp1854_status = ncp1854_get_chip_status();

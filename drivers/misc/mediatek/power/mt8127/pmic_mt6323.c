@@ -219,7 +219,7 @@ void PMIC_IMM_PollingAuxadcChannel(void)
 {
 	kal_uint32 ret=0;
     
-	 //xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[PMIC_IMM_PollingAuxadcChannel] before:%d ",upmu_get_rg_adc_deci_gdly());
+	 //xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[PMIC_IMM_PollingAuxadcChannel] before:%d ",upmu_get_rg_adc_deci_gdly());
 
 	if (upmu_get_rg_adc_deci_gdly()==1)
 	{
@@ -235,7 +235,7 @@ void PMIC_IMM_PollingAuxadcChannel(void)
 			spin_unlock_irqrestore(&pmic_adc_lock, flags);
 		}
 	}
-	//xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[PMIC_IMM_PollingAuxadcChannel] after:%d ",upmu_get_rg_adc_deci_gdly());
+	//xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[PMIC_IMM_PollingAuxadcChannel] after:%d ",upmu_get_rg_adc_deci_gdly());
 }
 
 //==============================================================================
@@ -325,7 +325,7 @@ int PMIC_IMM_GetOneChannelValue(int dwChannel, int deCount, int trimd)
 			msleep(1);
 			if( (count++) > count_time_out)
 			{
-                        xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[IMM_GetOneChannelValue_PMIC] (%d) Time out!\n", dwChannel);
+                        xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[IMM_GetOneChannelValue_PMIC] (%d) Time out!\n", dwChannel);
 			    break;
 			}			
 	            }
@@ -338,12 +338,12 @@ int PMIC_IMM_GetOneChannelValue(int dwChannel, int deCount, int trimd)
 			msleep(1);
 			if( (count++) > count_time_out)
 			{
-                        xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[IMM_GetOneChannelValue_PMIC] (%d) Time out!\n", dwChannel);
+                        xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[IMM_GetOneChannelValue_PMIC] (%d) Time out!\n", dwChannel);
 			    break;
 			}			
 	            }
 	            ret_data = upmu_get_rg_adc_out_ch6();				
-                xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[upmu_get_rg_adc_out_ch6] 0x%x\n", ret_data);
+                xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[upmu_get_rg_adc_out_ch6] 0x%x\n", ret_data);
 	            break;
 	        case 2:    
 	            while( upmu_get_rg_adc_rdy_thr_sense2() != 1 )
@@ -351,7 +351,7 @@ int PMIC_IMM_GetOneChannelValue(int dwChannel, int deCount, int trimd)
 			msleep(1);
 			if( (count++) > count_time_out)
 			{
-                        xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[IMM_GetOneChannelValue_PMIC] (%d) Time out!\n", dwChannel);
+                        xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[IMM_GetOneChannelValue_PMIC] (%d) Time out!\n", dwChannel);
 			    break;
 			}			
 	            }
@@ -363,7 +363,7 @@ int PMIC_IMM_GetOneChannelValue(int dwChannel, int deCount, int trimd)
 			msleep(1);
 			if( (count++) > count_time_out)
 			{
-                        xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[IMM_GetOneChannelValue_PMIC] (%d) Time out!\n", dwChannel);
+                        xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[IMM_GetOneChannelValue_PMIC] (%d) Time out!\n", dwChannel);
 			    break;
 			}			
 	            }
@@ -375,7 +375,7 @@ int PMIC_IMM_GetOneChannelValue(int dwChannel, int deCount, int trimd)
 			msleep(1);
 			if( (count++) > count_time_out)
 			{
-                        xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[IMM_GetOneChannelValue_PMIC] (%d) Time out!\n", dwChannel);
+                        xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[IMM_GetOneChannelValue_PMIC] (%d) Time out!\n", dwChannel);
 			    break;
 			}			
 	            }
@@ -387,7 +387,7 @@ int PMIC_IMM_GetOneChannelValue(int dwChannel, int deCount, int trimd)
 			msleep(1);
 			if( (count++) > count_time_out)
 			{
-                        xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[IMM_GetOneChannelValue_PMIC] (%d) Time out!\n", dwChannel);
+                        xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[IMM_GetOneChannelValue_PMIC] (%d) Time out!\n", dwChannel);
 			    break;
 			}			
 	            }
@@ -399,7 +399,7 @@ int PMIC_IMM_GetOneChannelValue(int dwChannel, int deCount, int trimd)
 			msleep(1);
 			if( (count++) > count_time_out)
 			{
-                        xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[IMM_GetOneChannelValue_PMIC] (%d) Time out!\n", dwChannel);
+                        xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[IMM_GetOneChannelValue_PMIC] (%d) Time out!\n", dwChannel);
 			    break;
 			}			
 	            }
@@ -411,7 +411,7 @@ int PMIC_IMM_GetOneChannelValue(int dwChannel, int deCount, int trimd)
 			msleep(1);
 			if( (count++) > count_time_out)
 			{
-                        xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[IMM_GetOneChannelValue_PMIC] (%d) Time out!\n", dwChannel);
+                        xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[IMM_GetOneChannelValue_PMIC] (%d) Time out!\n", dwChannel);
 			    break;
 			}			
 	            }
@@ -435,7 +435,7 @@ int PMIC_IMM_GetOneChannelValue(int dwChannel, int deCount, int trimd)
 			msleep(1);
 			if( (count++) > count_time_out)
 			{
-                        xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[IMM_GetOneChannelValue_PMIC] (%d) Time out!\n", dwChannel);
+                        xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[IMM_GetOneChannelValue_PMIC] (%d) Time out!\n", dwChannel);
 			    break;
 			}			
 	            }
@@ -443,7 +443,7 @@ int PMIC_IMM_GetOneChannelValue(int dwChannel, int deCount, int trimd)
 	            break; 				
                 
 	        default:
-	            xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[AUXADC] Invalid channel value(%d,%d)\n", dwChannel, trimd);
+	            xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[AUXADC] Invalid channel value(%d,%d)\n", dwChannel, trimd);
 	            wake_unlock(&pmicAuxadc_irq_lock);
 	            return -1;
 	            break;
@@ -456,7 +456,7 @@ int PMIC_IMM_GetOneChannelValue(int dwChannel, int deCount, int trimd)
 	    if (Enable_BATDRV_LOG == 2)
 	    {
 	        //debug
-	        xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[AUXADC] u4channel[%d]=%d.\n", 
+	        xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[AUXADC] u4channel[%d]=%d.\n", 
 	            dwChannel, ret_data);
 	    }
 	    
@@ -513,7 +513,7 @@ int PMIC_IMM_GetOneChannelValue(int dwChannel, int deCount, int trimd)
             adc_result = adc_result_temp;
             break;  
         default:
-            xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[AUXADC] Invalid channel value(%d,%d)\n", dwChannel, trimd);
+            xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[AUXADC] Invalid channel value(%d,%d)\n", dwChannel, trimd);
             wake_unlock(&pmicAuxadc_irq_lock);
             return -1;
             break;
@@ -522,7 +522,7 @@ int PMIC_IMM_GetOneChannelValue(int dwChannel, int deCount, int trimd)
     if (Enable_BATDRV_LOG == 2)
     {
         //debug
-        xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[AUXADC] adc_result_temp=%d, adc_result=%d, r_val_temp=%d.\n", 
+        xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[AUXADC] adc_result_temp=%d, adc_result=%d, r_val_temp=%d.\n", 
                 adc_result_temp, adc_result, r_val_temp);
     }
 
@@ -539,7 +539,7 @@ int pmic_get_buck_current(int avg_times)
     int offset = 0; // internal offset voltage = XmV, 80
 
     upmu_set_rg_smps_testmode_b(0x10);
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[pmic_get_buck_current] before meter, Reg[0x%x]=0x%x, Reg[0x%x]=0x%x\n", 
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[pmic_get_buck_current] before meter, Reg[0x%x]=0x%x, Reg[0x%x]=0x%x\n", 
         0x200, upmu_get_reg_value(0x200), 
         0x758, upmu_get_reg_value(0x758), 
         0x76E, upmu_get_reg_value(0x76E)
@@ -552,11 +552,11 @@ int pmic_get_buck_current(int avg_times)
     else
         val = 0;
     
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[pmic_get_buck_current] raw_data=%ld, val=%ld, avg_times=%ld\n", 
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[pmic_get_buck_current] raw_data=%ld, val=%ld, avg_times=%ld\n", 
         raw_data, val, avg_times);
 
     upmu_set_rg_smps_testmode_b(0x0);
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[pmic_get_buck_current] after meter, Reg[0x%x]=0x%x, Reg[0x%x]=0x%x\n", 
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[pmic_get_buck_current] after meter, Reg[0x%x]=0x%x, Reg[0x%x]=0x%x\n", 
         0x200, upmu_get_reg_value(0x200), 
         0x758, upmu_get_reg_value(0x758), 
         0x76E, upmu_get_reg_value(0x76E)
@@ -568,7 +568,7 @@ EXPORT_SYMBOL(pmic_get_buck_current);
 
 void upmu_interrupt_chrdet_int_en(kal_uint32 val)
 {
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[upmu_interrupt_chrdet_int_en] val=%d.\r\n", val);
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[upmu_interrupt_chrdet_int_en] val=%d.\r\n", val);
 
     upmu_set_rg_int_en_chrdet(val);
 }
@@ -584,7 +584,7 @@ static DECLARE_WAIT_QUEUE_HEAD(pmic_thread_wq);
 
 void wake_up_pmic(void)
 {
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[wake_up_pmic]\r\n");
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[wake_up_pmic]\r\n");
     pmic_thread_timeout = 1;
     wake_up(&pmic_thread_wq);
     wake_lock(&pmicThread_lock);
@@ -651,7 +651,7 @@ void spkl_ab_int_handler(void)
 {
     kal_uint32 ret=0;
 
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[spkl_ab_int_handler]....\n");
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[spkl_ab_int_handler]....\n");
     
     ret=pmic_config_interface(INT_STATUS0,0x1,0x1,0);    
 }
@@ -660,7 +660,7 @@ void spkl_d_int_handler(void)
 {
     kal_uint32 ret=0;
 
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[spkl_d_int_handler]....\n");
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[spkl_d_int_handler]....\n");
     
     ret=pmic_config_interface(INT_STATUS0,0x1,0x1,1);    
 }
@@ -669,7 +669,7 @@ void bat_l_int_handler(void)
 {
     kal_uint32 ret=0;
 
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[bat_l_int_handler]....\n");
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[bat_l_int_handler]....\n");
 
 
     upmu_set_rg_lbat_irq_en_min(0);	
@@ -681,7 +681,7 @@ void bat_h_int_handler(void)
 {
     kal_uint32 ret=0;
 
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[bat_h_int_handler]....\n");
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[bat_h_int_handler]....\n");
 
     upmu_set_rg_lbat_irq_en_max(0);
 	
@@ -692,7 +692,7 @@ void watchdog_int_handler(void)
 {
     kal_uint32 ret=0;
 
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[watchdog_int_handler]....\n");
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[watchdog_int_handler]....\n");
     
     ret=pmic_config_interface(INT_STATUS0,0x1,0x1,4);    
 }
@@ -718,7 +718,7 @@ void pwrkey_int_handler(void)
     #undef METRICS_STR_LEN
 #endif
 
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[pwrkey_int_handler]....\n");
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[pwrkey_int_handler]....\n");
 
     pwrkey_deb = upmu_get_pwrkey_deb();
 
@@ -731,7 +731,7 @@ void pwrkey_int_handler(void)
 
     if (pwrkey_deb == 1)
     {
-        xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[pwrkey_int_handler] Release pwrkey\n");
+        xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[pwrkey_int_handler] Release pwrkey\n");
 #if defined (CONFIG_MTK_KERNEL_POWER_OFF_CHARGING)
 		if(g_boot_mode == KERNEL_POWER_OFF_CHARGING_BOOT && timer_pre != 0)
 		{
@@ -740,10 +740,10 @@ void pwrkey_int_handler(void)
 				{
 					long_pwrkey_press = true;
 				}
-				xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[pmic_thread_kthread] timer_pos = %ld, timer_pre = %ld, timer_pos-timer_pre = %ld, long_pwrkey_press = %d\r\n",timer_pos, timer_pre, timer_pos-timer_pre, long_pwrkey_press);
+				xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[pmic_thread_kthread] timer_pos = %ld, timer_pre = %ld, timer_pos-timer_pre = %ld, long_pwrkey_press = %d\r\n",timer_pos, timer_pre, timer_pos-timer_pre, long_pwrkey_press);
 				if(long_pwrkey_press)   //500ms
 				{
-					xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[pmic_thread_kthread] Power Key Pressed during kernel power off charging, reboot OS\r\n");
+					xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[pmic_thread_kthread] Power Key Pressed during kernel power off charging, reboot OS\r\n");
 #ifdef CONFIG_AMAZON_SIGN_OF_LIFE
                     life_cycle_set_boot_reason(WARMBOOT_BY_SW);
 #endif
@@ -758,7 +758,7 @@ void pwrkey_int_handler(void)
     }
     else
     {
-        xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[pwrkey_int_handler] Press pwrkey\n");
+        xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[pwrkey_int_handler] Press pwrkey\n");
 #if defined (CONFIG_MTK_KERNEL_POWER_OFF_CHARGING)
 		if(g_boot_mode == KERNEL_POWER_OFF_CHARGING_BOOT)
 		{
@@ -779,7 +779,7 @@ void thr_l_int_handler(void)
 {
     kal_uint32 ret=0;
 
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[thr_l_int_handler]....\n");
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[thr_l_int_handler]....\n");
     
     ret=pmic_config_interface(INT_STATUS0,0x1,0x1,6);    
 }
@@ -788,7 +788,7 @@ void thr_h_int_handler(void)
 {
     kal_uint32 ret=0;
 
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[thr_h_int_handler]....\n");
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[thr_h_int_handler]....\n");
     
     ret=pmic_config_interface(INT_STATUS0,0x1,0x1,7);    
 }
@@ -797,7 +797,7 @@ void vbaton_undet_int_handler(void)
 {
     kal_uint32 ret=0;
 
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[vbaton_undet_int_handler]....\n");
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[vbaton_undet_int_handler]....\n");
     
     ret=pmic_config_interface(INT_STATUS0,0x1,0x1,8);    
 }
@@ -806,7 +806,7 @@ void bvalid_det_int_handler(void)
 {
     kal_uint32 ret=0;
 
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[bvalid_det_int_handler]....\n");
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[bvalid_det_int_handler]....\n");
     
     ret=pmic_config_interface(INT_STATUS0,0x1,0x1,9);    
 }
@@ -815,7 +815,7 @@ void chrdet_int_handler(void)
 {
     kal_uint32 ret=0;
 	
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[chrdet_int_handler]....\n");
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[chrdet_int_handler]....\n");
 #ifdef CONFIG_MTK_KERNEL_POWER_OFF_CHARGING
 #ifndef CONFIG_MTK_DUAL_INPUT_CHARGER_SUPPORT
     if (!upmu_get_rgs_chrdet())
@@ -825,7 +825,7 @@ void chrdet_int_handler(void)
         
         if(boot_mode == KERNEL_POWER_OFF_CHARGING_BOOT || boot_mode == LOW_POWER_OFF_CHARGING_BOOT)
         {
-            xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[chrdet_int_handler] Unplug Charger/USB In Kernel Power Off Charging Mode!  Shutdown OS!\r\n");
+            xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[chrdet_int_handler] Unplug Charger/USB In Kernel Power Off Charging Mode!  Shutdown OS!\r\n");
             mt_power_off();
         }
     }
@@ -840,7 +840,7 @@ void vbat_ov_int_handler(void)
 {
 	kal_uint32 ret=0;
 	
-	xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[vbat_ov_int_handler]....\n"); 
+	xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[vbat_ov_int_handler]....\n"); 
 
     ret=pmic_config_interface(INT_STATUS0,0x1,0x1,11);
 }
@@ -849,10 +849,10 @@ void ldo_oc_int_handler(void)
 {
     kal_uint32 ret=0;
 
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[ldo_oc_int_handler]....\n");
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[ldo_oc_int_handler]....\n");
     
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[PMIC] Reg[0x%x]=0x%x\n", OCSTATUS0, upmu_get_reg_value(OCSTATUS0));
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[PMIC] Reg[0x%x]=0x%x\n", OCSTATUS1, upmu_get_reg_value(OCSTATUS1));
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[PMIC] Reg[0x%x]=0x%x\n", OCSTATUS0, upmu_get_reg_value(OCSTATUS0));
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[PMIC] Reg[0x%x]=0x%x\n", OCSTATUS1, upmu_get_reg_value(OCSTATUS1));
 
     ret=pmic_config_interface(INT_STATUS1,0x1,0x1,0);    
 }
@@ -862,17 +862,17 @@ void fchr_key_int_handler(void)
 {
     kal_uint32 ret=0;
 
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[fchr_key_int_handler]....\n");
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[fchr_key_int_handler]....\n");
     
     if(upmu_get_fchrkey_deb()==1)
     {
-        xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[fchr_key_int_handler] Release fchrkey\n");
+        xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[fchr_key_int_handler] Release fchrkey\n");
         kpd_pmic_rstkey_handler(0x0);
         upmu_set_rg_fchrkey_int_sel(0);
     }
     else
     {
-        xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[fchr_key_int_handler] Press fchrkey\n");
+        xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[fchr_key_int_handler] Press fchrkey\n");
         kpd_pmic_rstkey_handler(0x1);
         upmu_set_rg_fchrkey_int_sel(1);
     }
@@ -886,11 +886,11 @@ void accdet_int_handler(void)
 {
     kal_uint32 ret=0;
 
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[accdet_int_handler]....\n");
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[accdet_int_handler]....\n");
 
     ret = accdet_irq_handler();
     if(0 == ret){
-        xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[accdet_int_handler] don't finished\n");
+        xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[accdet_int_handler] don't finished\n");
     }
     ret=pmic_config_interface(INT_STATUS1,0x1,0x1,2);    
 }
@@ -899,7 +899,7 @@ void audio_int_handler(void)
 {
     kal_uint32 ret=0;
 
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[audio_int_handler]....\n");
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[audio_int_handler]....\n");
     
     ret=pmic_config_interface(INT_STATUS1,0x1,0x1,3);    
 }
@@ -908,7 +908,7 @@ void rtc_int_handler(void)
 {
     kal_uint32 ret=0;
 
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[rtc_int_handler]....\n");
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[rtc_int_handler]....\n");
 
     rtc_irq_handler();
 
@@ -919,10 +919,10 @@ void vproc_oc_int_handler(void)
 {
     kal_uint32 ret=0;
 
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[vproc_oc_int_handler]....\n");
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[vproc_oc_int_handler]....\n");
 
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[PMIC] Reg[0x%x]=0x%x\n", OCSTATUS0, upmu_get_reg_value(OCSTATUS0));
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[PMIC] Reg[0x%x]=0x%x\n", OCSTATUS1, upmu_get_reg_value(OCSTATUS1));
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[PMIC] Reg[0x%x]=0x%x\n", OCSTATUS0, upmu_get_reg_value(OCSTATUS0));
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[PMIC] Reg[0x%x]=0x%x\n", OCSTATUS1, upmu_get_reg_value(OCSTATUS1));
 
     upmu_set_rg_pwmoc_ck_pdn(1);	
 	
@@ -935,10 +935,10 @@ void vsys_oc_int_handler(void)
 {
     kal_uint32 ret=0;
 
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[vsys_oc_int_handler]....\n");
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[vsys_oc_int_handler]....\n");
 
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[PMIC] Reg[0x%x]=0x%x\n", OCSTATUS0, upmu_get_reg_value(OCSTATUS0));
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[PMIC] Reg[0x%x]=0x%x\n", OCSTATUS1, upmu_get_reg_value(OCSTATUS1));
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[PMIC] Reg[0x%x]=0x%x\n", OCSTATUS0, upmu_get_reg_value(OCSTATUS0));
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[PMIC] Reg[0x%x]=0x%x\n", OCSTATUS1, upmu_get_reg_value(OCSTATUS1));
 
     upmu_set_rg_pwmoc_ck_pdn(1);
 	
@@ -951,10 +951,10 @@ void vpa_oc_int_handler(void)
 {
     kal_uint32 ret=0;
 
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[vpa_oc_int_handler]....\n");
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[vpa_oc_int_handler]....\n");
 
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[PMIC] Reg[0x%x]=0x%x\n", OCSTATUS0, upmu_get_reg_value(OCSTATUS0));
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[PMIC] Reg[0x%x]=0x%x\n", OCSTATUS1, upmu_get_reg_value(OCSTATUS1));
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[PMIC] Reg[0x%x]=0x%x\n", OCSTATUS0, upmu_get_reg_value(OCSTATUS0));
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[PMIC] Reg[0x%x]=0x%x\n", OCSTATUS1, upmu_get_reg_value(OCSTATUS1));
 
     upmu_set_rg_pwmoc_ck_pdn(1);
 
@@ -970,17 +970,17 @@ static int pmic_thread_kthread(void *x)
     kal_uint32 int_status_val_0=0;
     kal_uint32 int_status_val_1=0;
 
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[pmic_thread_kthread] enter\n");
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[pmic_thread_kthread] enter\n");
 
     /* Run on a process content */
     while (1) {
         mutex_lock(&pmic_mutex);
 	
-        xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[pmic_thread_kthread] running\n");
+        xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[pmic_thread_kthread] running\n");
 
         //--------------------------------------------------------------------------------
         ret=pmic_read_interface(INT_STATUS0,(&int_status_val_0),0xFFFF,0x0);
-        xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[INT] int_status_val_0=0x%x\n", int_status_val_0);
+        xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[INT] int_status_val_0=0x%x\n", int_status_val_0);
 
         if( (((int_status_val_0)&(0x0001))>>0) == 1 )  { spkl_ab_int_handler();      }
         if( (((int_status_val_0)&(0x0002))>>1) == 1 )  { spkl_d_int_handler();      }         
@@ -997,7 +997,7 @@ static int pmic_thread_kthread(void *x)
                      
         //--------------------------------------------------------------------------------
         ret=pmic_read_interface(INT_STATUS1,(&int_status_val_1),0xFFFF,0x0);
-        xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[INT] int_status_val_1=0x%x\n", int_status_val_1);
+        xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[INT] int_status_val_1=0x%x\n", int_status_val_1);
 
         if( (((int_status_val_1)&(0x0001))>>0) == 1 )  { ldo_oc_int_handler();          }
         if( (((int_status_val_1)&(0x0002))>>1) == 1 )  { fchr_key_int_handler();      }
@@ -1017,10 +1017,10 @@ static int pmic_thread_kthread(void *x)
         cust_pmic_interrupt_en_setting();
 
         ret=pmic_read_interface(INT_STATUS0,(&int_status_val_0),0xFFFF,0x0);
-        xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[INT] after ,int_status_val_0=0x%x\n", int_status_val_0);
+        xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[INT] after ,int_status_val_0=0x%x\n", int_status_val_0);
 
         ret=pmic_read_interface(INT_STATUS1,(&int_status_val_1),0xFFFF,0x0);
-        xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[INT] after ,int_status_val_1=0x%x\n", int_status_val_1);
+        xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[INT] after ,int_status_val_1=0x%x\n", int_status_val_1);
 
 	
         mutex_unlock(&pmic_mutex);
@@ -1038,7 +1038,7 @@ static int pmic_thread_kthread(void *x)
 
 void mt6323_pmic_eint_irq(void)
 {
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[mt6323_pmic_eint_irq] receive interrupt\n");
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[mt6323_pmic_eint_irq] receive interrupt\n");
 
     //pmic internal
     wake_up_pmic();
@@ -1048,14 +1048,14 @@ void mt6323_pmic_eint_irq(void)
 
 void PMIC_EINT_SETTING(void)
 {
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[PMIC_EINT_SETTING] start: CUST_EINT_MT6323_PMIC_NUM=%d\n",CUST_EINT_MT6323_PMIC_NUM);
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[PMIC_EINT_SETTING] start: CUST_EINT_MT6323_PMIC_NUM=%d\n",CUST_EINT_MT6323_PMIC_NUM);
 
     //ON/OFF interrupt
     cust_pmic_interrupt_en_setting();
 
     //GPIO Setting for early porting
     //mt_set_gpio_mode(GPIO37,GPIO_MODE_01); //EINT3 mode 1 on GPIO37
-    //xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[CUST_EINT] GPIO37=GPIO_MODE_01 for EINT3 usage\n");
+    //xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[CUST_EINT] GPIO37=GPIO_MODE_01 for EINT3 usage\n");
 
     //EINT setting
     //mt_eint_set_sens(           CUST_EINT_MT6323_PMIC_NUM,
@@ -1071,12 +1071,12 @@ void PMIC_EINT_SETTING(void)
 
     mt_eint_unmask(CUST_EINT_MT6323_PMIC_NUM);
 
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[CUST_EINT] CUST_EINT_MT6323_PMIC_NUM=%d\n", CUST_EINT_MT6323_PMIC_NUM);
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[CUST_EINT] CUST_EINT_MT6323_PMIC_DEBOUNCE_CN=%d\n", CUST_EINT_MT6323_PMIC_DEBOUNCE_CN);
-    //xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[CUST_EINT] CUST_EINT_MT6323_PMIC_POLARITY=%d\n", CUST_EINT_MT6323_PMIC_POLARITY);
-    //xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[CUST_EINT] CUST_EINT_MT6323_PMIC_SENSITIVE=%d\n", CUST_EINT_MT6323_PMIC_SENSITIVE);
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[CUST_EINT] CUST_EINT_MT6323_PMIC_TYPE=%d\n", CUST_EINT_MT6323_PMIC_TYPE);
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[CUST_EINT] CUST_EINT_MT6323_PMIC_DEBOUNCE_EN=%d\n", CUST_EINT_MT6323_PMIC_DEBOUNCE_EN);
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[CUST_EINT] CUST_EINT_MT6323_PMIC_NUM=%d\n", CUST_EINT_MT6323_PMIC_NUM);
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[CUST_EINT] CUST_EINT_MT6323_PMIC_DEBOUNCE_CN=%d\n", CUST_EINT_MT6323_PMIC_DEBOUNCE_CN);
+    //xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[CUST_EINT] CUST_EINT_MT6323_PMIC_POLARITY=%d\n", CUST_EINT_MT6323_PMIC_POLARITY);
+    //xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[CUST_EINT] CUST_EINT_MT6323_PMIC_SENSITIVE=%d\n", CUST_EINT_MT6323_PMIC_SENSITIVE);
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[CUST_EINT] CUST_EINT_MT6323_PMIC_TYPE=%d\n", CUST_EINT_MT6323_PMIC_TYPE);
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[CUST_EINT] CUST_EINT_MT6323_PMIC_DEBOUNCE_EN=%d\n", CUST_EINT_MT6323_PMIC_DEBOUNCE_EN);
 
     upmu_set_rg_intrp_ck_pdn(0); //for all interrupt events, turn on interrupt module clock
 }
@@ -1090,7 +1090,7 @@ void PMIC_DUMP_ALL_Register(void)
     for (i=0;i<0xFFFF;i++)
     {
         ret=pmic_read_interface(i,&reg_val,0xFFFF,0);
-        xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "Reg[0x%x]=0x%x\n", i, reg_val);
+        xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "Reg[0x%x]=0x%x\n", i, reg_val);
     }
 }
 
@@ -1119,7 +1119,7 @@ U32 pmic_read_interface (U32 RegNum, U32 *val, U32 MASK, U32 SHIFT)
     pmic6323_reg=rdata;
     if(return_value!=0)
     {
-        xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[pmic_read_interface] Reg[%x]= pmic_wrap read data fail\n", RegNum);
+        xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[pmic_read_interface] Reg[%x]= pmic_wrap read data fail\n", RegNum);
         mutex_unlock(&pmic_access_mutex);
         return return_value;
     }
@@ -1131,7 +1131,7 @@ U32 pmic_read_interface (U32 RegNum, U32 *val, U32 MASK, U32 SHIFT)
 
     mutex_unlock(&pmic_access_mutex);
 #else
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[pmic_read_interface] Can not access HW PMIC\n");
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[pmic_read_interface] Can not access HW PMIC\n");
 #endif
 
     return return_value;
@@ -1152,7 +1152,7 @@ U32 pmic_config_interface (U32 RegNum, U32 val, U32 MASK, U32 SHIFT)
     pmic6323_reg=rdata;
     if(return_value!=0)
     {
-        xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[pmic_config_interface] Reg[%x]= pmic_wrap read data fail\n", RegNum);
+        xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[pmic_config_interface] Reg[%x]= pmic_wrap read data fail\n", RegNum);
         mutex_unlock(&pmic_access_mutex);
         return return_value;
     }
@@ -1165,7 +1165,7 @@ U32 pmic_config_interface (U32 RegNum, U32 val, U32 MASK, U32 SHIFT)
     return_value= pwrap_wacs2(1, (RegNum), pmic6323_reg, &rdata);
     if(return_value!=0)
     {
-        xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[pmic_config_interface] Reg[%x]= pmic_wrap read data fail\n", RegNum);
+        xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[pmic_config_interface] Reg[%x]= pmic_wrap read data fail\n", RegNum);
         mutex_unlock(&pmic_access_mutex);
         return return_value;
     }
@@ -1178,7 +1178,7 @@ U32 pmic_config_interface (U32 RegNum, U32 val, U32 MASK, U32 SHIFT)
     pmic6323_reg=rdata;
     if(return_value!=0)
     {
-        xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[pmic_config_interface] Reg[%x]= pmic_wrap write data fail\n", RegNum);
+        xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[pmic_config_interface] Reg[%x]= pmic_wrap write data fail\n", RegNum);
         mutex_unlock(&pmic_access_mutex);
         return return_value;
     }
@@ -1187,7 +1187,7 @@ U32 pmic_config_interface (U32 RegNum, U32 val, U32 MASK, U32 SHIFT)
 
     mutex_unlock(&pmic_access_mutex);
 #else
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[pmic_config_interface] Can not access HW PMIC\n");
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[pmic_config_interface] Can not access HW PMIC\n");
 #endif
 
     return return_value;
@@ -1209,7 +1209,7 @@ U32 pmic_read_interface_nolock (U32 RegNum, U32 *val, U32 MASK, U32 SHIFT)
     pmic6323_reg=rdata;
     if(return_value!=0)
     {
-        xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[pmic_read_interface_nolock] Reg[%x]= pmic_wrap read data fail\n", RegNum);
+        xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[pmic_read_interface_nolock] Reg[%x]= pmic_wrap read data fail\n", RegNum);
         return return_value;
     }
     //xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[pmic_read_interface_nolock] Reg[%x]=0x%x\n", RegNum, pmic6323_reg);
@@ -1218,7 +1218,7 @@ U32 pmic_read_interface_nolock (U32 RegNum, U32 *val, U32 MASK, U32 SHIFT)
     *val = (pmic6323_reg >> SHIFT);
     //xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[pmic_read_interface_nolock] val=0x%x\n", *val);
 #else
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[pmic_read_interface_nolock] Can not access HW PMIC\n");
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[pmic_read_interface_nolock] Can not access HW PMIC\n");
 #endif
 
     return return_value;
@@ -1237,7 +1237,7 @@ U32 pmic_config_interface_nolock (U32 RegNum, U32 val, U32 MASK, U32 SHIFT)
     pmic6323_reg=rdata;
     if(return_value!=0)
     {
-        xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[pmic_config_interface_nolock] Reg[%x]= pmic_wrap read data fail\n", RegNum);
+        xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[pmic_config_interface_nolock] Reg[%x]= pmic_wrap read data fail\n", RegNum);
         return return_value;
     }
     //xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[pmic_config_interface_nolock] Reg[%x]=0x%x\n", RegNum, pmic6323_reg);
@@ -1249,12 +1249,12 @@ U32 pmic_config_interface_nolock (U32 RegNum, U32 val, U32 MASK, U32 SHIFT)
     return_value= pwrap_wacs2(1, (RegNum), pmic6323_reg, &rdata);
     if(return_value!=0)
     {
-        xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[pmic_config_interface_nolock] Reg[%x]= pmic_wrap read data fail\n", RegNum);
+        xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[pmic_config_interface_nolock] Reg[%x]= pmic_wrap read data fail\n", RegNum);
         return return_value;
     }
     //xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[pmic_config_interface_nolock] write Reg[%x]=0x%x\n", RegNum, pmic6323_reg);
 #else
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[pmic_config_interface_nolock] Can not access HW PMIC\n");
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[pmic_config_interface_nolock] Can not access HW PMIC\n");
 #endif
 
     return return_value;
@@ -1266,7 +1266,7 @@ U32 pmic_config_interface_nolock (U32 RegNum, U32 val, U32 MASK, U32 SHIFT)
 U32 g_reg_value=0;
 static ssize_t show_pmic_access(struct device *dev,struct device_attribute *attr, char *buf)
 {
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[show_pmic_access] 0x%x\n", g_reg_value);
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[show_pmic_access] 0x%x\n", g_reg_value);
     return sprintf(buf, "%u\n", g_reg_value);
 }
 static ssize_t store_pmic_access(struct device *dev,struct device_attribute *attr, const char *buf, size_t size)
@@ -1275,23 +1275,23 @@ static ssize_t store_pmic_access(struct device *dev,struct device_attribute *att
     char *pvalue = NULL;
     U32 reg_value = 0;
     U32 reg_address = 0;
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[store_pmic_access] \n");
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[store_pmic_access] \n");
     if(buf != NULL && size != 0)
     {
-        xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[store_pmic_access] buf is %s and size is %d \n",buf,size);
+        xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[store_pmic_access] buf is %s and size is %d \n",buf,size);
         reg_address = simple_strtoul(buf,&pvalue,16);
 
         if(size > 5)
         {
             reg_value = simple_strtoul((pvalue+1),NULL,16);
-            xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[store_pmic_access] write PMU reg 0x%x with value 0x%x !\n",reg_address,reg_value);
+            xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[store_pmic_access] write PMU reg 0x%x with value 0x%x !\n",reg_address,reg_value);
             ret=pmic_config_interface(reg_address, reg_value, 0xFFFF, 0x0);
         }
         else
         {
             ret=pmic_read_interface(reg_address, &g_reg_value, 0xFFFF, 0x0);
-            xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[store_pmic_access] read PMU reg 0x%x with value 0x%x !\n",reg_address,g_reg_value);
-            xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[store_pmic_access] Please use \"cat pmic_access\" to get value\r\n");
+            xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[store_pmic_access] read PMU reg 0x%x with value 0x%x !\n",reg_address,g_reg_value);
+            xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[store_pmic_access] Please use \"cat pmic_access\" to get value\r\n");
         }
     }
     return size;
@@ -1341,7 +1341,7 @@ VCAM_IO
 
 void dct_pmic_VPROC_enable(kal_bool dctEnable)
 {
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[dct_pmic_VPROC_enable] %d\n", dctEnable);
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[dct_pmic_VPROC_enable] %d\n", dctEnable);
 
     if(dctEnable == KAL_TRUE)
     {
@@ -1355,7 +1355,7 @@ void dct_pmic_VPROC_enable(kal_bool dctEnable)
 
 void dct_pmic_VSYS_enable(kal_bool dctEnable)
 {
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[dct_pmic_VSYS_enable] %d\n", dctEnable);
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[dct_pmic_VSYS_enable] %d\n", dctEnable);
 
     if(dctEnable == KAL_TRUE)
     {
@@ -1369,7 +1369,7 @@ void dct_pmic_VSYS_enable(kal_bool dctEnable)
 
 void dct_pmic_VPA_enable(kal_bool dctEnable)
 {
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[dct_pmic_VPA_enable] %d\n", dctEnable);
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[dct_pmic_VPA_enable] %d\n", dctEnable);
 
     if(dctEnable == KAL_TRUE)
     {
@@ -1384,7 +1384,7 @@ void dct_pmic_VPA_enable(kal_bool dctEnable)
 //Digital LDO
 void dct_pmic_VIO28_enable(kal_bool dctEnable)
 {
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[dct_pmic_VIO28_enable] %d\n", dctEnable);
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[dct_pmic_VIO28_enable] %d\n", dctEnable);
 
     if(dctEnable == KAL_TRUE)
     {
@@ -1398,7 +1398,7 @@ void dct_pmic_VIO28_enable(kal_bool dctEnable)
 
 void dct_pmic_VUSB_enable(kal_bool dctEnable)
 {
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[dct_pmic_VUSB_enable] %d\n", dctEnable);
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[dct_pmic_VUSB_enable] %d\n", dctEnable);
 
     if(dctEnable == KAL_TRUE)
     {
@@ -1412,7 +1412,7 @@ void dct_pmic_VUSB_enable(kal_bool dctEnable)
 
 void dct_pmic_VMC_enable(kal_bool dctEnable)
 {
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[dct_pmic_VMC_enable] %d\n", dctEnable);
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[dct_pmic_VMC_enable] %d\n", dctEnable);
 
     if(dctEnable == KAL_TRUE)
     {
@@ -1426,7 +1426,7 @@ void dct_pmic_VMC_enable(kal_bool dctEnable)
 
 void dct_pmic_VMCH_enable(kal_bool dctEnable)
 {
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[dct_pmic_VMCH_enable] %d\n", dctEnable);
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[dct_pmic_VMCH_enable] %d\n", dctEnable);
 
     if(dctEnable == KAL_TRUE)
     {
@@ -1440,7 +1440,7 @@ void dct_pmic_VMCH_enable(kal_bool dctEnable)
 
 void dct_pmic_VEMC_3V3_enable(kal_bool dctEnable)
 {
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[dct_pmic_VEMC_3V3_enable] %d\n", dctEnable);
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[dct_pmic_VEMC_3V3_enable] %d\n", dctEnable);
 
     if(dctEnable == KAL_TRUE)
     {
@@ -1454,7 +1454,7 @@ void dct_pmic_VEMC_3V3_enable(kal_bool dctEnable)
 
 void dct_pmic_VGP1_enable(kal_bool dctEnable)
 {
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[dct_pmic_VGP1_enable] %d\n", dctEnable);
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[dct_pmic_VGP1_enable] %d\n", dctEnable);
 
     if(dctEnable == KAL_TRUE)
     {
@@ -1468,7 +1468,7 @@ void dct_pmic_VGP1_enable(kal_bool dctEnable)
 
 void dct_pmic_VGP2_enable(kal_bool dctEnable)
 {
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[dct_pmic_VGP2_enable] %d\n", dctEnable);
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[dct_pmic_VGP2_enable] %d\n", dctEnable);
 
     if(dctEnable == KAL_TRUE)
     {
@@ -1482,7 +1482,7 @@ void dct_pmic_VGP2_enable(kal_bool dctEnable)
 
 void dct_pmic_VGP3_enable(kal_bool dctEnable)
 {
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[dct_pmic_VGP3_enable] %d\n", dctEnable);
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[dct_pmic_VGP3_enable] %d\n", dctEnable);
 
     if(dctEnable == KAL_TRUE)
     {
@@ -1496,7 +1496,7 @@ void dct_pmic_VGP3_enable(kal_bool dctEnable)
 
 void dct_pmic_VCN_1V8_enable(kal_bool dctEnable)
 {
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[dct_pmic_VCN18_enable] %d\n", dctEnable);
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[dct_pmic_VCN18_enable] %d\n", dctEnable);
 
     if(dctEnable == KAL_TRUE)
     {
@@ -1510,7 +1510,7 @@ void dct_pmic_VCN_1V8_enable(kal_bool dctEnable)
 
 void dct_pmic_VSIM1_enable(kal_bool dctEnable)
 {
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[dct_pmic_VSIM1_enable] %d\n", dctEnable);
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[dct_pmic_VSIM1_enable] %d\n", dctEnable);
 
     if(dctEnable == KAL_TRUE)
     {
@@ -1524,7 +1524,7 @@ void dct_pmic_VSIM1_enable(kal_bool dctEnable)
 
 void dct_pmic_VSIM2_enable(kal_bool dctEnable)
 {
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[dct_pmic_VSIM2_enable] %d\n", dctEnable);
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[dct_pmic_VSIM2_enable] %d\n", dctEnable);
 
     if(dctEnable == KAL_TRUE)
     {
@@ -1538,7 +1538,7 @@ void dct_pmic_VSIM2_enable(kal_bool dctEnable)
 
 void dct_pmic_VRTC_enable(kal_bool dctEnable)
 {
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[dct_pmic_VRTC_enable] %d\n", dctEnable);
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[dct_pmic_VRTC_enable] %d\n", dctEnable);
 
     if(dctEnable == KAL_TRUE)
     {
@@ -1552,7 +1552,7 @@ void dct_pmic_VRTC_enable(kal_bool dctEnable)
 
 void dct_pmic_VCAM_AF_enable(kal_bool dctEnable)
 {
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[dct_pmic_VCAM_AF_enable] %d\n", dctEnable);
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[dct_pmic_VCAM_AF_enable] %d\n", dctEnable);
 
     if(dctEnable == KAL_TRUE)
     {
@@ -1566,7 +1566,7 @@ void dct_pmic_VCAM_AF_enable(kal_bool dctEnable)
 
 void dct_pmic_VIBR_enable(kal_bool dctEnable)
 {
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[dct_pmic_VIBR_enable] %d\n", dctEnable);
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[dct_pmic_VIBR_enable] %d\n", dctEnable);
 
     if(dctEnable == KAL_TRUE)
     {
@@ -1580,7 +1580,7 @@ void dct_pmic_VIBR_enable(kal_bool dctEnable)
 
 void dct_pmic_VM_enable(kal_bool dctEnable)
 {
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[dct_pmic_VM_enable] %d\n", dctEnable);
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[dct_pmic_VM_enable] %d\n", dctEnable);
 
     if(dctEnable == KAL_TRUE)
     {
@@ -1594,7 +1594,7 @@ void dct_pmic_VM_enable(kal_bool dctEnable)
 
 void dct_pmic_VRF18_enable(kal_bool dctEnable)
 {
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[dct_pmic_VRF18_enable] %d\n", dctEnable);
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[dct_pmic_VRF18_enable] %d\n", dctEnable);
 
     if(dctEnable == KAL_TRUE)
     {
@@ -1608,7 +1608,7 @@ void dct_pmic_VRF18_enable(kal_bool dctEnable)
 
 void dct_pmic_VIO18_enable(kal_bool dctEnable)
 {
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[dct_pmic_VIO18_enable] %d\n", dctEnable);
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[dct_pmic_VIO18_enable] %d\n", dctEnable);
 
     if(dctEnable == KAL_TRUE)
     {
@@ -1622,7 +1622,7 @@ void dct_pmic_VIO18_enable(kal_bool dctEnable)
 
 void dct_pmic_VCAMD_enable(kal_bool dctEnable)
 {
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[dct_pmic_VCAMD_enable] %d\n", dctEnable);
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[dct_pmic_VCAMD_enable] %d\n", dctEnable);
 
     if(dctEnable == KAL_TRUE)
     {
@@ -1636,7 +1636,7 @@ void dct_pmic_VCAMD_enable(kal_bool dctEnable)
 
 void dct_pmic_VCAM_IO_enable(kal_bool dctEnable)
 {
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[dct_pmic_VCAM_IO_enable] %d\n", dctEnable);
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[dct_pmic_VCAM_IO_enable] %d\n", dctEnable);
 
     if(dctEnable == KAL_TRUE)
     {
@@ -1651,7 +1651,7 @@ void dct_pmic_VCAM_IO_enable(kal_bool dctEnable)
 //ANALOG LDO
 void dct_pmic_VTCXO_enable(kal_bool dctEnable)
 {
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[dct_pmic_VTCXO_enable] %d\n", dctEnable);
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[dct_pmic_VTCXO_enable] %d\n", dctEnable);
 
     if(dctEnable == KAL_TRUE)
     {
@@ -1665,7 +1665,7 @@ void dct_pmic_VTCXO_enable(kal_bool dctEnable)
 
 void dct_pmic_VA_enable(kal_bool dctEnable)
 {
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[dct_pmic_VA_enable] %d\n", dctEnable);
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[dct_pmic_VA_enable] %d\n", dctEnable);
 
     if(dctEnable == KAL_TRUE)
     {
@@ -1679,7 +1679,7 @@ void dct_pmic_VA_enable(kal_bool dctEnable)
 
 void dct_pmic_VCAMA_enable(kal_bool dctEnable)
 {
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[dct_pmic_VCAMA_enable] %d\n", dctEnable);
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[dct_pmic_VCAMA_enable] %d\n", dctEnable);
 
     if(dctEnable == KAL_TRUE)
     {
@@ -1693,7 +1693,7 @@ void dct_pmic_VCAMA_enable(kal_bool dctEnable)
 
 void dct_pmic_VCN33_enable_bt(kal_bool dctEnable)
 {
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[dct_pmic_VCN28_enable_bt] %d\n", dctEnable);
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[dct_pmic_VCN28_enable_bt] %d\n", dctEnable);
 
     if(dctEnable == KAL_TRUE)
     {
@@ -1707,7 +1707,7 @@ void dct_pmic_VCN33_enable_bt(kal_bool dctEnable)
 
 void dct_pmic_VCN33_enable_wifi(kal_bool dctEnable)
 {
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[dct_pmic_VCN28_enable_wifi] %d\n", dctEnable);
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[dct_pmic_VCN28_enable_wifi] %d\n", dctEnable);
 
     if(dctEnable == KAL_TRUE)
     {
@@ -1723,7 +1723,7 @@ void dct_pmic_VCN33_enable_wifi(kal_bool dctEnable)
 
 void dct_pmic_VCN28_enable(kal_bool dctEnable)
 {
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[dct_pmic_VCN28_enable] %d\n", dctEnable);
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[dct_pmic_VCN28_enable] %d\n", dctEnable);
 
     if(dctEnable == KAL_TRUE)
     {
@@ -1780,43 +1780,43 @@ VCN28
 //D-LDO
 void dct_pmic_VMC_sel(kal_uint32 volt)
 {
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "****[dct_pmic_VMC_sel] value=%d \n", volt);
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "****[dct_pmic_VMC_sel] value=%d \n", volt);
 
     if(volt == VOL_DEFAULT)     {upmu_set_rg_vmc_vosel(1);}
     else if(volt == VOL_3300){upmu_set_rg_vmc_vosel(1); }
     else if(volt == VOL_1800){upmu_set_rg_vmc_vosel(0); }
     else{
-        xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "Error Setting %d. DO nothing.\r\n", volt);
+        xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "Error Setting %d. DO nothing.\r\n", volt);
     }
 }
 
 void dct_pmic_VMCH_sel(kal_uint32 volt)
 {
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "****[dct_pmic_VMCH_sel] value=%d \n", volt);
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "****[dct_pmic_VMCH_sel] value=%d \n", volt);
 
     if(volt == VOL_DEFAULT)     {upmu_set_rg_vmch_vosel(1);}
     else if(volt == VOL_3000){upmu_set_rg_vmch_vosel(0); }
     else if(volt == VOL_3300){upmu_set_rg_vmch_vosel(1); }
     else{
-        xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "Error Setting %d. DO nothing.\r\n", volt);
+        xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "Error Setting %d. DO nothing.\r\n", volt);
     }
 }
 
 void dct_pmic_VEMC_3V3_sel(kal_uint32 volt)
 {
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "****[dct_pmic_VEMC_3V3_sel] value=%d \n", volt);
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "****[dct_pmic_VEMC_3V3_sel] value=%d \n", volt);
 
     if(volt == VOL_DEFAULT)     {upmu_set_rg_vemc_3v3_vosel(1);}
     else if(volt == VOL_3000){upmu_set_rg_vemc_3v3_vosel(0); }
     else if(volt == VOL_3300){upmu_set_rg_vemc_3v3_vosel(1); }
     else{
-        xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "Error Setting %d. DO nothing.\r\n", volt);
+        xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "Error Setting %d. DO nothing.\r\n", volt);
     }
 }
 
 void dct_pmic_VGP1_sel(kal_uint32 volt)
 {
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "****[dct_pmic_VGP1_sel] value=%d \n", volt);
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "****[dct_pmic_VGP1_sel] value=%d \n", volt);
 
     if(volt == VOL_DEFAULT)     { upmu_set_rg_vgp1_vosel(5);}
     else if(volt == VOL_1200){ upmu_set_rg_vgp1_vosel(0);}
@@ -1828,13 +1828,13 @@ void dct_pmic_VGP1_sel(kal_uint32 volt)
     else if(volt == VOL_3000){ upmu_set_rg_vgp1_vosel(6);}
     else if(volt == VOL_3300){ upmu_set_rg_vgp1_vosel(7);}
     else{
-        xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "Error Setting %d. DO nothing.\r\n", volt);
+        xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "Error Setting %d. DO nothing.\r\n", volt);
     }
 }
 
 void dct_pmic_VGP2_sel(kal_uint32 volt)
 {
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "****[dct_pmic_VGP2_sel] value=%d \n", volt);
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "****[dct_pmic_VGP2_sel] value=%d \n", volt);
 
     if(volt == VOL_DEFAULT)     { upmu_set_rg_vgp2_vosel(4);}
     else if(volt == VOL_1200){ upmu_set_rg_vgp2_vosel(0);}
@@ -1846,13 +1846,13 @@ void dct_pmic_VGP2_sel(kal_uint32 volt)
     else if(volt == VOL_3000){ upmu_set_rg_vgp2_vosel(6);}
     else if(volt == VOL_2000){ upmu_set_rg_vgp2_vosel(7);}
     else{
-        xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "Error Setting %d. DO nothing.\r\n", volt);
+        xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "Error Setting %d. DO nothing.\r\n", volt);
     }
 }
 
 void dct_pmic_VGP3_sel(kal_uint32 volt)
 {
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "****[dct_pmic_VGP3_sel] value=%d \n", volt);
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "****[dct_pmic_VGP3_sel] value=%d \n", volt);
 
     if(volt == VOL_DEFAULT)     { upmu_set_rg_vgp3_vosel(0);}
     else if(volt == VOL_1200){ upmu_set_rg_vgp3_vosel(0);}
@@ -1860,13 +1860,13 @@ void dct_pmic_VGP3_sel(kal_uint32 volt)
     else if(volt == VOL_1500){ upmu_set_rg_vgp3_vosel(2);}
     else if(volt == VOL_1800){ upmu_set_rg_vgp3_vosel(3);}
     else{
-        xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "Error Setting %d. DO nothing.\r\n", volt);
+        xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "Error Setting %d. DO nothing.\r\n", volt);
     }
 }
 
 void dct_pmic_VCAM_AF_sel(kal_uint32 volt)
 {
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "****[dct_pmic_VCAM_AF_sel] value=%d \n", volt);
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "****[dct_pmic_VCAM_AF_sel] value=%d \n", volt);
 
     if(volt == VOL_DEFAULT)  { upmu_set_rg_vcam_af_vosel(4);}
     else if(volt == VOL_1200){ upmu_set_rg_vcam_af_vosel(0);}
@@ -1878,37 +1878,37 @@ void dct_pmic_VCAM_AF_sel(kal_uint32 volt)
     else if(volt == VOL_3000){ upmu_set_rg_vcam_af_vosel(6);}
     else if(volt == VOL_3300){ upmu_set_rg_vcam_af_vosel(7);}	
     else{
-        xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "Error Setting %d. DO nothing.\r\n", volt);
+        xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "Error Setting %d. DO nothing.\r\n", volt);
     }
 }
 
 void dct_pmic_VSIM1_sel(kal_uint32 volt)
 {
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "****[dct_pmic_VSIM1_sel] value=%d \n", volt);
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "****[dct_pmic_VSIM1_sel] value=%d \n", volt);
 
     if(volt == VOL_DEFAULT)     { upmu_set_rg_vsim1_vosel(0);}
     else if(volt == VOL_1800){ upmu_set_rg_vsim1_vosel(0);}
     else if(volt == VOL_3000){ upmu_set_rg_vsim1_vosel(1);}
     else{
-        xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "Error Setting %d. DO nothing.\r\n", volt);
+        xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "Error Setting %d. DO nothing.\r\n", volt);
     }
 }
 
 void dct_pmic_VSIM2_sel(kal_uint32 volt)
 {
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "****[dct_pmic_VSIM2_sel] value=%d \n", volt);
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "****[dct_pmic_VSIM2_sel] value=%d \n", volt);
 
     if(volt == VOL_DEFAULT)     { upmu_set_rg_vsim2_vosel(0);}
     else if(volt == VOL_1800){ upmu_set_rg_vsim2_vosel(0);}
     else if(volt == VOL_3000){ upmu_set_rg_vsim2_vosel(1);}
     else{
-        xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "Error Setting %d. DO nothing.\r\n", volt);
+        xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "Error Setting %d. DO nothing.\r\n", volt);
     }
 }
 
 void dct_pmic_VIBR_sel(kal_uint32 volt)
 {
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "****[dct_pmic_VIBR_sel] value=%d \n", volt);
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "****[dct_pmic_VIBR_sel] value=%d \n", volt);
 
     if(volt == VOL_DEFAULT)     { upmu_set_rg_vibr_vosel(0);}
     else if(volt == VOL_1200){ upmu_set_rg_vibr_vosel(0);}
@@ -1920,13 +1920,13 @@ void dct_pmic_VIBR_sel(kal_uint32 volt)
     else if(volt == VOL_3000){ upmu_set_rg_vibr_vosel(6);}
     else if(volt == VOL_3300){ upmu_set_rg_vibr_vosel(7);}
     else{
-        xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "Error Setting %d. DO nothing.\r\n", volt);
+        xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "Error Setting %d. DO nothing.\r\n", volt);
     }
 }
 
 void dct_pmic_VM_sel(kal_uint32 volt)
 {
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "****[dct_pmic_VM_sel] value=%d \n", volt);
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "****[dct_pmic_VM_sel] value=%d \n", volt);
 
     if(volt == VOL_DEFAULT)     { upmu_set_rg_vm_vosel(0);}
     else if(volt == VOL_1200){ upmu_set_rg_vm_vosel(0);}
@@ -1934,13 +1934,13 @@ void dct_pmic_VM_sel(kal_uint32 volt)
     else if(volt == VOL_1500){ upmu_set_rg_vm_vosel(2);}
     else if(volt == VOL_1800){ upmu_set_rg_vm_vosel(3);}
     else{
-        xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "Error Setting %d. DO nothing.\r\n", volt);
+        xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "Error Setting %d. DO nothing.\r\n", volt);
     }
 }
 
 void dct_pmic_VCAMD_sel(kal_uint32 volt)
 {
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "****[dct_pmic_VCAMD_sel] value=%d \n", volt);
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "****[dct_pmic_VCAMD_sel] value=%d \n", volt);
 
     if(volt == VOL_DEFAULT)     { upmu_set_rg_vcamd_vosel(0);}
     else if(volt == VOL_1200){ upmu_set_rg_vcamd_vosel(0);}
@@ -1948,14 +1948,14 @@ void dct_pmic_VCAMD_sel(kal_uint32 volt)
     else if(volt == VOL_1500){ upmu_set_rg_vcamd_vosel(2);}
     else if(volt == VOL_1800){ upmu_set_rg_vcamd_vosel(3);}
     else{
-        xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "Error Setting %d. DO nothing.\r\n", volt);
+        xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "Error Setting %d. DO nothing.\r\n", volt);
     }
 }
 
 //A-LDO
 void dct_pmic_VCAMA_sel(kal_uint32 volt)
 {
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "****[dct_pmic_VCAMA_sel] value=%d \n", volt);
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "****[dct_pmic_VCAMA_sel] value=%d \n", volt);
 
     if(volt == VOL_DEFAULT)     { upmu_set_rg_vcama_vosel(3);}
     else if(volt == VOL_1500){ upmu_set_rg_vcama_vosel(0);}
@@ -1963,13 +1963,13 @@ void dct_pmic_VCAMA_sel(kal_uint32 volt)
     else if(volt == VOL_2500){ upmu_set_rg_vcama_vosel(2);}
     else if(volt == VOL_2800){ upmu_set_rg_vcama_vosel(3);}
     else{
-        xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "Error Setting %d. DO nothing.\r\n", volt);
+        xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "Error Setting %d. DO nothing.\r\n", volt);
     }
 }
 
 void dct_pmic_VCN33_sel(kal_uint32 volt)
 {
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "****[dct_pmic_VCN33_sel] value=%d \n", volt);
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "****[dct_pmic_VCN33_sel] value=%d \n", volt);
 
     if(volt == VOL_DEFAULT)     { upmu_set_rg_vcn33_vosel(3);}
     else if(volt == VOL_3300){ upmu_set_rg_vcn33_vosel(0);}
@@ -1977,7 +1977,7 @@ void dct_pmic_VCN33_sel(kal_uint32 volt)
     else if(volt == VOL_3500){ upmu_set_rg_vcn33_vosel(2);}
     else if(volt == VOL_3600){ upmu_set_rg_vcn33_vosel(3);}
     else{
-        xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "Error Setting %d. DO nothing.\r\n", volt);
+        xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "Error Setting %d. DO nothing.\r\n", volt);
     }
 }
 
@@ -3175,31 +3175,31 @@ void pmic_ldo_vol_sel(MT65XX_POWER powerId, MT65XX_POWER_VOLTAGE powerVolt)
 
     //Need integrate with DCT : using DCT APIs
 
-    if(     powerId == MT6323_POWER_LDO_VIO28)      { xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[dct_pmic_VIO28_enable] No vlotage can setting!\n"); }
-    else if(powerId == MT6323_POWER_LDO_VUSB)       { xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[dct_pmic_VUSB_enable] No vlotage can setting!\n"); }
+    if(     powerId == MT6323_POWER_LDO_VIO28)      { xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[dct_pmic_VIO28_enable] No vlotage can setting!\n"); }
+    else if(powerId == MT6323_POWER_LDO_VUSB)       { xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[dct_pmic_VUSB_enable] No vlotage can setting!\n"); }
     else if(powerId == MT6323_POWER_LDO_VMC)        { dct_pmic_VMC_sel(powerVolt); }
     else if(powerId == MT6323_POWER_LDO_VMCH)        { dct_pmic_VMCH_sel(powerVolt); }
     else if(powerId == MT6323_POWER_LDO_VEMC_3V3)    { dct_pmic_VEMC_3V3_sel(powerVolt); }
     else if(powerId == MT6323_POWER_LDO_VGP1)    { dct_pmic_VGP1_sel(powerVolt); }
     else if(powerId == MT6323_POWER_LDO_VGP2)        { dct_pmic_VGP2_sel(powerVolt); }
     else if(powerId == MT6323_POWER_LDO_VGP3)        { dct_pmic_VGP3_sel(powerVolt); }
-    else if(powerId == MT6323_POWER_LDO_VCN_1V8)        {xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[dct_pmic_VCN_1V8_enable] No vlotage can setting!\n");}
+    else if(powerId == MT6323_POWER_LDO_VCN_1V8)        {xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[dct_pmic_VCN_1V8_enable] No vlotage can setting!\n");}
     else if(powerId == MT6323_POWER_LDO_VSIM1)        { dct_pmic_VSIM1_sel(powerVolt); }
     else if(powerId == MT6323_POWER_LDO_VSIM2)        { dct_pmic_VSIM2_sel(powerVolt); }
-    else if(powerId == MT6323_POWER_LDO_VRTC)        { xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[dct_pmic_VRTC_enable] No vlotage can setting!\n");}
+    else if(powerId == MT6323_POWER_LDO_VRTC)        { xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[dct_pmic_VRTC_enable] No vlotage can setting!\n");}
     else if(powerId == MT6323_POWER_LDO_VCAM_AF)        { dct_pmic_VCAM_AF_sel(powerVolt); }
     else if(powerId == MT6323_POWER_LDO_VIBR)        { dct_pmic_VIBR_sel(powerVolt); }
     else if(powerId == MT6323_POWER_LDO_VM)        { dct_pmic_VM_sel(powerVolt); }
-    else if(powerId == MT6323_POWER_LDO_VRF18)        { xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[dct_pmic_VRF18_enable] No vlotage can setting!\n");}
-    else if(powerId == MT6323_POWER_LDO_VIO18)        { xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[dct_pmic_VIO18_enable] No vlotage can setting!\n");}
+    else if(powerId == MT6323_POWER_LDO_VRF18)        { xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[dct_pmic_VRF18_enable] No vlotage can setting!\n");}
+    else if(powerId == MT6323_POWER_LDO_VIO18)        { xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[dct_pmic_VIO18_enable] No vlotage can setting!\n");}
     else if(powerId == MT6323_POWER_LDO_VCAMD)        { dct_pmic_VCAMD_sel(powerVolt); }
-    else if(powerId == MT6323_POWER_LDO_VCAM_IO)    { xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[dct_pmic_VCAM_IO_enable] No vlotage can setting!\n");}
-    else if(powerId == MT6323_POWER_LDO_VTCXO)        { xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[dct_pmic_VTCXO_enable] No vlotage can setting!\n");}
-    else if(powerId == MT6323_POWER_LDO_VA)         { xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[dct_pmic_VA_enable] No vlotage can setting!\n"); }
+    else if(powerId == MT6323_POWER_LDO_VCAM_IO)    { xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[dct_pmic_VCAM_IO_enable] No vlotage can setting!\n");}
+    else if(powerId == MT6323_POWER_LDO_VTCXO)        { xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[dct_pmic_VTCXO_enable] No vlotage can setting!\n");}
+    else if(powerId == MT6323_POWER_LDO_VA)         { xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[dct_pmic_VA_enable] No vlotage can setting!\n"); }
     else if(powerId == MT6323_POWER_LDO_VCAMA)      { dct_pmic_VCAMA_sel(powerVolt); }
     else if(powerId == MT6323_POWER_LDO_VCN33_BT)        { dct_pmic_VCN33_sel(powerVolt); }
     else if(powerId == MT6323_POWER_LDO_VCN33_WIFI)        { dct_pmic_VCN33_sel(powerVolt); }	
-    else if(powerId == MT6323_POWER_LDO_VCN28)      { xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[dct_pmic_VCN28_enable] No vlotage can setting!\n"); }
+    else if(powerId == MT6323_POWER_LDO_VCN28)      { xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[dct_pmic_VCN28_enable] No vlotage can setting!\n"); }
     else
     {
         xlog_printk(ANDROID_LOG_WARN, "Power/PMIC", "[pmic_ldo_ldo_vol_sel] UnKnown powerId (%d)\n", powerId);
@@ -3433,14 +3433,14 @@ void pmic_debug_init(void)
 
     mt_pmic_dir = proc_mkdir("mt_pmic", NULL);
     if (!mt_pmic_dir) {
-        xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "fail to mkdir /proc/mt_pmic\n" );
+        xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "fail to mkdir /proc/mt_pmic\n" );
         return;
     }
 
     #if LINUX_VERSION_CODE >= KERNEL_VERSION(3,10,0)
     entry = proc_create("dump_ldo_status", 00640, mt_pmic_dir, &ldo_status_fops);
     if (!entry) {
-        xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "fail to create entry /proc/mt_pmic/dump_ldo_status\n" );
+        xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "fail to create entry /proc/mt_pmic/dump_ldo_status\n" );
         return;
     }
     #else
@@ -3460,8 +3460,8 @@ void PMIC_INIT_SETTING_V1(void)
 
     if(chip_version >= PMIC6323_E2_CID_CODE)
     {
-        xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[Kernel_PMIC_INIT_SETTING_V1] PMIC Chip = %x\n",chip_version);
-        xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[Kernel_PMIC_INIT_SETTING_V1] 20130604_0.85v\n");
+        xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[Kernel_PMIC_INIT_SETTING_V1] PMIC Chip = %x\n",chip_version);
+        xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[Kernel_PMIC_INIT_SETTING_V1] 20130604_0.85v\n");
         
         //put init setting from DE/SA
         
@@ -3553,8 +3553,8 @@ ret = pmic_config_interface(0x778,0x1,0x1,15); // [15:15]: RG_VREF18_ENB_MD;
     }
     else if(chip_version >= PMIC6323_E1_CID_CODE)
     {
-        xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[Kernel_PMIC_INIT_SETTING_V1] PMIC Chip = %x\n",chip_version);
-        xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[Kernel_PMIC_INIT_SETTING_V1] 20130328_0.85v\n");
+        xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[Kernel_PMIC_INIT_SETTING_V1] PMIC Chip = %x\n",chip_version);
+        xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[Kernel_PMIC_INIT_SETTING_V1] 20130328_0.85v\n");
 
         //put init setting from DE/SA
 
@@ -3646,7 +3646,7 @@ ret = pmic_config_interface(0x778,0x1,0x1,15); // [15:15]: RG_VREF18_ENB_MD;
     }
     else
     {
-        xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[Kernel_PMIC_INIT_SETTING_V1] Unknown PMIC Chip (%x)\n",chip_version);
+        xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[Kernel_PMIC_INIT_SETTING_V1] Unknown PMIC Chip (%x)\n",chip_version);
     }
 
 
@@ -3679,7 +3679,7 @@ void pmic_setting_depends_rtc(void)
         ret = pmic_config_interface(ANALDO_CON1,    1,    0x1,    11); // [11]=1(VTCXO_ON_CTRL), 
         ret = pmic_config_interface(ANALDO_CON1,    0,    0x1,    0);  // [0] =0(VTCXO_LP_SEL),
         
-        xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[pmic_setting_depends_rtc] With 32K. Reg[0x%x]=0x%x\n", 
+        xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[pmic_setting_depends_rtc] With 32K. Reg[0x%x]=0x%x\n", 
             ANALDO_CON1, upmu_get_reg_value(ANALDO_CON1));
     }
     else
@@ -3688,11 +3688,11 @@ void pmic_setting_depends_rtc(void)
         ret = pmic_config_interface(ANALDO_CON1,    0,    0x1,    11); // [11]=0(VTCXO_ON_CTRL), 
         ret = pmic_config_interface(ANALDO_CON1,    1,    0x1,    0);  // [0] =1(VTCXO_LP_SEL),
 
-        xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[pmic_setting_depends_rtc] Without 32K. Reg[0x%x]=0x%x\n", 
+        xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[pmic_setting_depends_rtc] Without 32K. Reg[0x%x]=0x%x\n", 
             ANALDO_CON1, upmu_get_reg_value(ANALDO_CON1));
     }
 #else
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[pmic_setting_depends_rtc] no define CONFIG_MTK_RTC\n");
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[pmic_setting_depends_rtc] no define CONFIG_MTK_RTC\n");
 #endif
 }
 
@@ -3700,21 +3700,21 @@ static int pmic_mt6323_probe(struct platform_device *dev)
 {
     U32 ret_val=0;
 
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "******** MT6323 pmic driver probe!! ********\n" );
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "******** MT6323 pmic driver probe!! ********\n" );
 
 
     //get PMIC CID
     ret_val=upmu_get_cid();
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "MT6323 PMIC CID=0x%x\n", ret_val );
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "MT6323 PMIC CID=0x%x\n", ret_val );
 
     //enable rtc 32k to pmic
     //rtc_gpio_enable_32k(RTC_GPIO_USER_PMIC);
 
     //pmic initial setting
     PMIC_INIT_SETTING_V1();
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[PMIC_INIT_SETTING_V1] Done\n");
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[PMIC_INIT_SETTING_V1] Done\n");
     PMIC_CUSTOM_SETTING_V1();
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[PMIC_CUSTOM_SETTING_V1] Done\n");
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[PMIC_CUSTOM_SETTING_V1] Done\n");
     
     //No need due to VTCXO always on
     //pmic setting with RTC
@@ -3722,10 +3722,10 @@ static int pmic_mt6323_probe(struct platform_device *dev)
     
     //PMIC Interrupt Service
     PMIC_EINT_SETTING();
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[PMIC_EINT_SETTING] Done\n");
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[PMIC_EINT_SETTING] Done\n");
     
     kthread_run(pmic_thread_kthread, NULL, "pmic_thread_kthread");
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[pmic_thread_kthread] Done\n");
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[pmic_thread_kthread] Done\n");
 
     //Dump register
     //#ifndef USER_BUILD_KERNEL
@@ -3734,12 +3734,12 @@ static int pmic_mt6323_probe(struct platform_device *dev)
 
     dump_ldo_status_read_debug();
     pmic_debug_init();
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[PMIC] pmic_debug_init : done.\n" );
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[PMIC] pmic_debug_init : done.\n" );
 
     #ifdef MTK_ENABLE_MD5
     pmic_config_interface(0x402,0x0,0x1,0); // [0:0]: VTCXO_LP_SEL; 
     pmic_config_interface(0x402,0x1,0x1,11); // [11:11]: VTCXO_ON_CTRL;
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[PMIC] VTCXO control by SRCLKEM due to MTK_ENABLE_MD5, Reg[0x402]=0x%x\n",
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[PMIC] VTCXO control by SRCLKEM due to MTK_ENABLE_MD5, Reg[0x402]=0x%x\n",
         upmu_get_reg_value(0x402));
     #endif
 
@@ -3751,19 +3751,19 @@ static int pmic_mt6323_probe(struct platform_device *dev)
 
 static int pmic_mt6323_remove(struct platform_device *dev)
 {
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "******** MT6323 pmic driver remove!! ********\n" );
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "******** MT6323 pmic driver remove!! ********\n" );
 
     return 0;
 }
 
 static void pmic_mt6323_shutdown(struct platform_device *dev)
 {
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "******** MT6323 pmic driver shutdown!! ********\n" );
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "******** MT6323 pmic driver shutdown!! ********\n" );
 }
 
 static int pmic_mt6323_suspend(struct platform_device *dev, pm_message_t state)
 {
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "******** MT6323 pmic driver suspend!! ********\n" );
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "******** MT6323 pmic driver suspend!! ********\n" );
 	upmu_set_rg_vref18_enb(1);
 	upmu_set_rg_adc_deci_gdly(1);
 	upmu_set_rg_clksq_en_aux(1);
@@ -3780,7 +3780,7 @@ static int pmic_mt6323_suspend(struct platform_device *dev, pm_message_t state)
 
 static int pmic_mt6323_resume(struct platform_device *dev)
 {
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "******** MT6323 pmic driver resume!! ********\n" );
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "******** MT6323 pmic driver resume!! ********\n" );
 	upmu_set_rg_vref18_enb(0);
 	//upmu_set_rg_adc_deci_gdly(0);
 	upmu_set_rg_clksq_en_aux(1);
@@ -3818,7 +3818,7 @@ static int mt_pmic_probe(struct platform_device *dev)
 {
     int ret_device_file = 0;
 
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "******** mt_pmic_probe!! ********\n" );
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "******** mt_pmic_probe!! ********\n" );
 
     ret_device_file = device_create_file(&(dev->dev), &dev_attr_pmic_access);
 
@@ -3900,7 +3900,7 @@ static struct platform_driver mt_pmic_driver = {
 #ifdef CONFIG_HAS_EARLYSUSPEND
 static void pmic_early_suspend(struct early_suspend *h)
 {
-	xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "******** MT6323 pmic driver early suspend!! ********\n" );
+	xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "******** MT6323 pmic driver early suspend!! ********\n" );
 	upmu_set_rg_vref18_enb(0);
 	//upmu_set_rg_adc_deci_gdly(0);
 	upmu_set_rg_clksq_en_aux(1);
@@ -3915,7 +3915,7 @@ static void pmic_early_suspend(struct early_suspend *h)
 
 static void pmic_early_resume(struct early_suspend *h)
 {
-	xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "******** MT6323 pmic driver early resume!! ********\n" );
+	xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "******** MT6323 pmic driver early resume!! ********\n" );
 	upmu_set_rg_vref18_enb(0);
 	//upmu_set_rg_adc_deci_gdly(0);
 	upmu_set_rg_clksq_en_aux(1);
@@ -3950,24 +3950,24 @@ static int __init pmic_mt6323_init(void)
     // PMIC device driver register
     ret = platform_device_register(&pmic_mt6323_device);
     if (ret) {
-        xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "****[pmic_mt6323_init] Unable to device register(%d)\n", ret);
+        xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "****[pmic_mt6323_init] Unable to device register(%d)\n", ret);
         return ret;
     }
     ret = platform_driver_register(&pmic_mt6323_driver);
     if (ret) {
-        xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "****[pmic_mt6323_init] Unable to register driver (%d)\n", ret);
+        xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "****[pmic_mt6323_init] Unable to register driver (%d)\n", ret);
         return ret;
     }
 
     // PMIC user space access interface
     ret = platform_device_register(&mt_pmic_device);
     if (ret) {
-            xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "****[pmic_mt6323_init] Unable to device register(%d)\n", ret);
+            xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "****[pmic_mt6323_init] Unable to device register(%d)\n", ret);
             return ret;
     }
     ret = platform_driver_register(&mt_pmic_driver);
     if (ret) {
-            xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "****[pmic_mt6323_init] Unable to register driver (%d)\n", ret);
+            xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "****[pmic_mt6323_init] Unable to register driver (%d)\n", ret);
             return ret;
     }
 
@@ -3975,7 +3975,7 @@ static int __init pmic_mt6323_init(void)
 	register_early_suspend(&pmic_early_suspend_desc);
 #endif
 
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "****[pmic_mt6323_init] Initialization : DONE !!\n");
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "****[pmic_mt6323_init] Initialization : DONE !!\n");
 
     return 0;
 }

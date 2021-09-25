@@ -7251,7 +7251,7 @@ static DECLARE_WAIT_QUEUE_HEAD(mt6333_thread_wq);
 
 void wake_up_mt6333(void)
 {
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[wake_up_mt6333]\n");
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[wake_up_mt6333]\n");
     mt6333_thread_timeout = 1;
     wake_up(&mt6333_thread_wq);
 }
@@ -7280,15 +7280,15 @@ void cust_mt6333_interrupt_en_setting(void)
     mt6333_set_rg_int_en_chr_oc(0);
     mt6333_set_rg_int_en_chr_plug_in_flash(0);    
 
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "Reg[0x%x]=0x%x\n", MT6333_INT_CON0, mt6333_get_reg_value(MT6333_INT_CON0));
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "Reg[0x%x]=0x%x\n", MT6333_INT_CON1, mt6333_get_reg_value(MT6333_INT_CON1));
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "Reg[0x%x]=0x%x\n", MT6333_INT_CON2, mt6333_get_reg_value(MT6333_INT_CON2));
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "Reg[0x%x]=0x%x\n", MT6333_INT_CON0, mt6333_get_reg_value(MT6333_INT_CON0));
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "Reg[0x%x]=0x%x\n", MT6333_INT_CON1, mt6333_get_reg_value(MT6333_INT_CON1));
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "Reg[0x%x]=0x%x\n", MT6333_INT_CON2, mt6333_get_reg_value(MT6333_INT_CON2));
 }
 
 void chr_complete_int_handler(void)
 {
     kal_uint32 ret=0;
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[chr_complete_int_handler]....\n");
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[chr_complete_int_handler]....\n");
     
     printk("RGS_CHARGE_COMPLETE_HW = %d\n", mt6333_get_rgs_charge_complete_hw());
     
@@ -7298,119 +7298,119 @@ void chr_complete_int_handler(void)
 void thermal_sd_int_handler(void)
 {
     kal_uint32 ret=0;
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[thermal_sd_int_handler]....\n");
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[thermal_sd_int_handler]....\n");
     ret=mt6333_config_interface(MT6333_INT_STATUS0,0x1,0x1,1);
 }
 
 void thermal_reg_in_int_handler(void)
 {
     kal_uint32 ret=0;
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[thermal_reg_in_int_handler]....\n");
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[thermal_reg_in_int_handler]....\n");
     ret=mt6333_config_interface(MT6333_INT_STATUS0,0x1,0x1,2);
 }
 
 void thermal_reg_out_int_handler(void)
 {
     kal_uint32 ret=0;
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[thermal_reg_out_int_handler]....\n");
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[thermal_reg_out_int_handler]....\n");
     ret=mt6333_config_interface(MT6333_INT_STATUS0,0x1,0x1,3);
 }
 
 void otg_oc_int_handler(void)
 {
     kal_uint32 ret=0;
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[otg_oc_int_handler]....\n");
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[otg_oc_int_handler]....\n");
     ret=mt6333_config_interface(MT6333_INT_STATUS0,0x1,0x1,4);
 }
 
 void otg_thermal_int_handler(void)
 {
     kal_uint32 ret=0;
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[otg_thermal_int_handler]....\n");
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[otg_thermal_int_handler]....\n");
     ret=mt6333_config_interface(MT6333_INT_STATUS0,0x1,0x1,5);
 }
 
 void otg_chrin_short_int_handler(void)
 {
     kal_uint32 ret=0;
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[otg_chrin_short_int_handler]....\n");
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[otg_chrin_short_int_handler]....\n");
     ret=mt6333_config_interface(MT6333_INT_STATUS0,0x1,0x1,6);
 }
 
 void otg_drvcdt_short_int_handler(void)
 {
     kal_uint32 ret=0;
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[otg_drvcdt_short_int_handler]....\n");
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[otg_drvcdt_short_int_handler]....\n");
     ret=mt6333_config_interface(MT6333_INT_STATUS0,0x1,0x1,7);
 }
 
 void chrwdt_flag_int_handler(void)
 {
     kal_uint32 ret=0;
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[chrwdt_flag_int_handler]....\n");
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[chrwdt_flag_int_handler]....\n");
     ret=mt6333_config_interface(MT6333_INT_STATUS1,0x1,0x1,0);
 }
 
 void buck_vcore_oc_int_handler(void)
 {
     kal_uint32 ret=0;
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[buck_vcore_oc_int_handler]....\n");
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[buck_vcore_oc_int_handler]....\n");
     ret=mt6333_config_interface(MT6333_INT_STATUS1,0x1,0x1,1);
 }
 
 void buck_vmem_oc_int_handler(void)
 {
     kal_uint32 ret=0;
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[buck_vmem_oc_int_handler]....\n");
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[buck_vmem_oc_int_handler]....\n");
     ret=mt6333_config_interface(MT6333_INT_STATUS1,0x1,0x1,2);
 }
 
 void buck_vrf18_oc_int_handler(void)
 {
     kal_uint32 ret=0;
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[buck_vrf18_oc_int_handler]....\n");
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[buck_vrf18_oc_int_handler]....\n");
     ret=mt6333_config_interface(MT6333_INT_STATUS1,0x1,0x1,3);
 }
 
 void buck_thermal_int_handler(void)
 {
     kal_uint32 ret=0;
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[buck_thermal_int_handler]....\n");
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[buck_thermal_int_handler]....\n");
     ret=mt6333_config_interface(MT6333_INT_STATUS1,0x1,0x1,4);
 }
 
 void flash_en_timeout_int_handler(void)
 {
     kal_uint32 ret=0;
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[flash_en_timeout_int_handler]....\n");
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[flash_en_timeout_int_handler]....\n");
     ret=mt6333_config_interface(MT6333_INT_STATUS1,0x1,0x1,5);
 }
 
 void flash_vled_short_int_handler(void)
 {
     kal_uint32 ret=0;
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[flash_vled_short_int_handler]....\n");
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[flash_vled_short_int_handler]....\n");
     ret=mt6333_config_interface(MT6333_INT_STATUS1,0x1,0x1,6);
 }
 
 void flash_vled_open_int_handler(void)
 {
     kal_uint32 ret=0;
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[flash_vled_open_int_handler]....\n");
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[flash_vled_open_int_handler]....\n");
     ret=mt6333_config_interface(MT6333_INT_STATUS1,0x1,0x1,7);
 }
 
 void chr_plug_in_flash_int_handler(void)
 {
     kal_uint32 ret=0;
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[chr_plug_in_flash_int_handler]....\n");
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[chr_plug_in_flash_int_handler]....\n");
     ret=mt6333_config_interface(MT6333_INT_STATUS2,0x1,0x1,0);
 }
 
 void chr_oc_int_handler(void)
 {
     kal_uint32 ret=0;
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[chr_oc_int_handler]....\n");
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[chr_oc_int_handler]....\n");
     ret=mt6333_config_interface(MT6333_INT_STATUS2,0x1,0x1,1);
 }
 
@@ -7420,17 +7420,17 @@ static int mt6333_thread_kthread(void *x)
     kal_uint32 int_status_val_1=0;
     kal_uint32 int_status_val_2=0;
 
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[mt6333_thread_kthread] enter\n");
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[mt6333_thread_kthread] enter\n");
 
     /* Run on a process content */
     while (1) {
         mutex_lock(&mt6333_mutex);
 
-        xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[mt6333_thread_kthread] running\n");
+        xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[mt6333_thread_kthread] running\n");
 
         //--------------------------------------------------------------------------------
         int_status_val_0 = mt6333_get_reg_value(MT6333_INT_STATUS0);
-        xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[INT] int_status_val_0=0x%x\n", int_status_val_0);
+        xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[INT] int_status_val_0=0x%x\n", int_status_val_0);
 
         if( (((int_status_val_0)&(0x0001))>>0) == 1 )  { chr_complete_int_handler();     }
         if( (((int_status_val_0)&(0x0002))>>1) == 1 )  { thermal_sd_int_handler();       }         
@@ -7442,7 +7442,7 @@ static int mt6333_thread_kthread(void *x)
         if( (((int_status_val_0)&(0x0080))>>7) == 1 )  { otg_drvcdt_short_int_handler(); }                     
         //--------------------------------------------------------------------------------
         int_status_val_1 = mt6333_get_reg_value(MT6333_INT_STATUS1);
-        xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[INT] int_status_val_1=0x%x\n", int_status_val_1);
+        xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[INT] int_status_val_1=0x%x\n", int_status_val_1);
 
         if( (((int_status_val_0)&(0x0001))>>0) == 1 )  { chrwdt_flag_int_handler();       }
         if( (((int_status_val_0)&(0x0002))>>1) == 1 )  { buck_vcore_oc_int_handler();     }          
@@ -7454,7 +7454,7 @@ static int mt6333_thread_kthread(void *x)
         if( (((int_status_val_0)&(0x0080))>>7) == 1 )  { flash_vled_open_int_handler();   }            
         //--------------------------------------------------------------------------------
         int_status_val_2 = mt6333_get_reg_value(MT6333_INT_STATUS2);
-        xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[INT] int_status_val_2=0x%x\n", int_status_val_2);
+        xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[INT] int_status_val_2=0x%x\n", int_status_val_2);
 
         if( (((int_status_val_0)&(0x0001))>>0) == 1 )  { chr_plug_in_flash_int_handler(); }
         if( (((int_status_val_0)&(0x0002))>>1) == 1 )  { chr_oc_int_handler();            }         
@@ -7479,7 +7479,7 @@ static int mt6333_thread_kthread(void *x)
 
 void mt6333_pmic_eint_irq(void)
 {
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[mt6333_pmic_eint_irq] receive interrupt\n");
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[mt6333_pmic_eint_irq] receive interrupt\n");
 
     wake_up_mt6333();
 
@@ -7488,7 +7488,7 @@ void mt6333_pmic_eint_irq(void)
 
 void MT6333_EINT_SETTING(void)
 {
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[MT6333_EINT_SETTING] start: CUST_EINT_MT6333_PMIC_NUM=%d\n",CUST_EINT_MT6333_PMIC_NUM);
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[MT6333_EINT_SETTING] start: CUST_EINT_MT6333_PMIC_NUM=%d\n",CUST_EINT_MT6333_PMIC_NUM);
 
     //ON/OFF interrupt
     cust_mt6333_interrupt_en_setting();
@@ -7509,12 +7509,12 @@ void MT6333_EINT_SETTING(void)
 
     mt_eint_unmask(CUST_EINT_MT6333_PMIC_NUM);
 
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[CUST_EINT] CUST_EINT_MT6333_PMIC_NUM=%d\n",           CUST_EINT_MT6333_PMIC_NUM);
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[CUST_EINT] CUST_EINT_MT6333_PMIC_DEBOUNCE_CN=%d\n",   CUST_EINT_MT6333_PMIC_DEBOUNCE_CN);
-    //xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[CUST_EINT] CUST_EINT_MT6333_PMIC_POLARITY=%d\n",      CUST_EINT_MT6333_PMIC_POLARITY);
-    //xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[CUST_EINT] CUST_EINT_MT6333_PMIC_SENSITIVE=%d\n",     CUST_EINT_MT6333_PMIC_SENSITIVE);
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[CUST_EINT] CUST_EINT_MT6333_PMIC_TYPE=%d\n",          CUST_EINT_MT6333_PMIC_TYPE);
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[CUST_EINT] CUST_EINT_MT6333_PMIC_DEBOUNCE_EN=%d\n",   CUST_EINT_MT6333_PMIC_DEBOUNCE_EN);
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[CUST_EINT] CUST_EINT_MT6333_PMIC_NUM=%d\n",           CUST_EINT_MT6333_PMIC_NUM);
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[CUST_EINT] CUST_EINT_MT6333_PMIC_DEBOUNCE_CN=%d\n",   CUST_EINT_MT6333_PMIC_DEBOUNCE_CN);
+    //xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[CUST_EINT] CUST_EINT_MT6333_PMIC_POLARITY=%d\n",      CUST_EINT_MT6333_PMIC_POLARITY);
+    //xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[CUST_EINT] CUST_EINT_MT6333_PMIC_SENSITIVE=%d\n",     CUST_EINT_MT6333_PMIC_SENSITIVE);
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[CUST_EINT] CUST_EINT_MT6333_PMIC_TYPE=%d\n",          CUST_EINT_MT6333_PMIC_TYPE);
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[CUST_EINT] CUST_EINT_MT6333_PMIC_DEBOUNCE_EN=%d\n",   CUST_EINT_MT6333_PMIC_DEBOUNCE_EN);
 }    
 
 #if 1
@@ -9542,8 +9542,8 @@ void MT6333_PMIC_INIT_SETTING_V1(void)
     
     if(g_mt6333_cid >= PMIC6333_E1_CID_CODE)
     {
-        xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[MT6333_PMIC_INIT_SETTING_V1] PMIC Chip = %x\n",g_mt6333_cid);
-        xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[MT6333_PMIC_INIT_SETTING_V1] 20130514\n");
+        xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[MT6333_PMIC_INIT_SETTING_V1] PMIC Chip = %x\n",g_mt6333_cid);
+        xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[MT6333_PMIC_INIT_SETTING_V1] 20130514\n");
 
         //put init setting from DE/SA
         
@@ -9560,10 +9560,10 @@ void MT6333_PMIC_INIT_SETTING_V1(void)
     }
     else
     {
-        xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[MT6333_PMIC_INIT_SETTING_V1] Unknown PMIC Chip (%x)\n",g_mt6333_cid);
+        xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[MT6333_PMIC_INIT_SETTING_V1] Unknown PMIC Chip (%x)\n",g_mt6333_cid);
     }
 
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "after MT6333 init : Reg[%x]=0x%x,Reg[%x]=0x%x,Reg[%x]=0x%x,Reg[%x]=0x%x,Reg[%x]=0x%x\n", 
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "after MT6333 init : Reg[%x]=0x%x,Reg[%x]=0x%x,Reg[%x]=0x%x,Reg[%x]=0x%x,Reg[%x]=0x%x\n", 
         0x9f, mt6333_get_reg_value(0x9f),
         0xA0, mt6333_get_reg_value(0xA0),
         0x69, mt6333_get_reg_value(0x69),
@@ -9576,15 +9576,15 @@ void MT6333_PMIC_INIT_SETTING_V1(void)
     #endif
 
     // DCT
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[MT6333_PMIC_INIT_SETTING_V1] pmu_drv_tool_customization_init\n");
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "MT6333 before: Reg[%x]=0x%x,Reg[%x]=0x%x,Reg[%x]=0x%x\n", 
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[MT6333_PMIC_INIT_SETTING_V1] pmu_drv_tool_customization_init\n");
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "MT6333 before: Reg[%x]=0x%x,Reg[%x]=0x%x,Reg[%x]=0x%x\n", 
         0x68, mt6333_get_reg_value(0x68),
         0x80, mt6333_get_reg_value(0x80),
         0x9F, mt6333_get_reg_value(0x9F)
         );
     pmu_drv_tool_customization_init(); // #ifdef MTK_MT6333_SUPPORT
     dump_ldo_status_read_debug();
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "MT6333 after: Reg[%x]=0x%x,Reg[%x]=0x%x,Reg[%x]=0x%x\n", 
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "MT6333 after: Reg[%x]=0x%x,Reg[%x]=0x%x,Reg[%x]=0x%x\n", 
         0x68, mt6333_get_reg_value(0x68),
         0x80, mt6333_get_reg_value(0x80),
         0x9F, mt6333_get_reg_value(0x9F)
@@ -9609,21 +9609,21 @@ static int mt6333_driver_probe(struct i2c_client *client, const struct i2c_devic
     //---------------------
     g_mt6333_cid = mt6333_get_cid0();
     g_mt6333_cid |= ((mt6333_get_cid1()) << 8);
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[mt6333_driver_probe] g_mt6333_cid=0x%x\n", g_mt6333_cid);
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[mt6333_driver_probe] g_mt6333_cid=0x%x\n", g_mt6333_cid);
     
     mt6333_hw_init();    
     //mt6333_dump_register();
 
     //pmic initial setting
     MT6333_PMIC_INIT_SETTING_V1();
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[MT6333_PMIC_INIT_SETTING_V1] Done\n");
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[MT6333_PMIC_INIT_SETTING_V1] Done\n");
 
     //MT6333 Interrupt Service
     //MT6333_EINT_SETTING();
-    //xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[MT6333_EINT_SETTING] Done\n");
+    //xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[MT6333_EINT_SETTING] Done\n");
     
     kthread_run(mt6333_thread_kthread, NULL, "mt6333_thread_kthread");
-    xlog_printk(ANDROID_LOG_INFO, "Power/PMIC", "[mt6333_thread_kthread] Done\n");
+    xlog_printk(ANDROID_LOG_DEBUG, "Power/PMIC", "[mt6333_thread_kthread] Done\n");
 
     mt6333_hw_init_done = KAL_TRUE;
 
