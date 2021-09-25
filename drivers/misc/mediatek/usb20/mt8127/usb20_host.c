@@ -38,6 +38,8 @@
 #include <linux/metricslog.h>
 #endif
 
+#define DBG(fmt, args...) do {} while (0)
+
 extern struct musb *mtk_musb;
 
 static struct musb_fifo_cfg fifo_cfg_host[] = {

@@ -50,6 +50,8 @@
 
 #include <linux/musb/musb_core.h>
 
+#define DBG(fmt, args...) do {} while (0)
+
 #define DRIVER_AUTHOR "Mediatek"
 #define DRIVER_DESC "driver for OTG USB-IF test"
 #define MUSB_OTG_CSR0 0x102

@@ -50,6 +50,8 @@
 
 #include <linux/musb/musb_core.h>
 
+#define DBG(fmt, args...) do {} while (0)
+
 #define FIFO_START_ADDR 512
 
 //#define RX_DMA_MODE1 1

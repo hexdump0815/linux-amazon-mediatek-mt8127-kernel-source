@@ -48,6 +48,8 @@
 #include <linux/musb/musb_core.h>
 #include <linux/musb/musb_host.h>
 
+#define DBG(fmt, args...) do {} while (0)
+
 
 /* MUSB HOST status 22-mar-2006
  *
