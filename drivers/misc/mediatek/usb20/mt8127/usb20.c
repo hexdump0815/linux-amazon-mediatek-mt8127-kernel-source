@@ -40,6 +40,8 @@
 #include <linux/metricslog.h>
 #endif
 
+#define DBG(fmt, args...) do {} while (0)
+
 extern struct musb *mtk_musb;
 static DEFINE_SEMAPHORE(power_clock_lock);
 //static bool platform_init_first = true;   //Mark by ALPS01262215
@@ -283,7 +285,7 @@ void mt_usb_connect(void)
 
 void mt_usb_disconnect(void)
 {
-	printk("[MUSB] USB is ready for disconnect\n");
+//	printk("[MUSB] USB is ready for disconnect\n");
 
 	if (!mtk_musb || !mtk_musb->is_ready || mtk_musb->is_host || !mtk_musb->power)
 		return;

@@ -111,6 +111,8 @@
 #include <linux/musb/mtk_musb.h>
 #endif
 
+#define DBG(fmt, args...) do {} while (0)
+
 int musb_host_dynamic_fifo = 1;
 int musb_host_dynamic_fifo_usage_msk;
 module_param(musb_host_dynamic_fifo, int, 0644);
