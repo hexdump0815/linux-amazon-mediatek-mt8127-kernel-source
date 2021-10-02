@@ -310,7 +310,7 @@ static void mtk_ta_vchr_select(int i,int ta_v_chr_candidate[], int ta_charging_c
 
 	current_vchr = battery_meter_get_charger_voltage();
 	if(ta_current_level != 5000 && current_vchr >= 4900) {	/* pattern error before, so reset vchr to 5V */
-		battery_xlog_printk(BAT_LOG_CRTI, "mtk_ta_vchr_select() : curr_VChr=%d, ta_current_level=%d\n",current_vchr,ta_current_level);
+//		battery_xlog_printk(BAT_LOG_CRTI, "mtk_ta_vchr_select() : curr_VChr=%d, ta_current_level=%d\n",current_vchr,ta_current_level);
 
 		mtk_ta_reset_vchr();
 	}
