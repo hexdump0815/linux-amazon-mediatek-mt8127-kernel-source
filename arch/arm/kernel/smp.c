@@ -220,7 +220,7 @@ void __cpuinit __cpu_die(unsigned int cpu)
 		pr_err("CPU%u: cpu didn't die\n", cpu);
 		return;
 	}
-	printk(KERN_NOTICE "CPU%u: shutdown\n", cpu);
+//	printk(KERN_NOTICE "CPU%u: shutdown\n", cpu);
 
 	/*
 	 * platform_cpu_kill() is generally expected to do the powering off
@@ -356,7 +356,7 @@ asmlinkage void __cpuinit secondary_start_kernel(void)
 	cpu_init();
 	aee_rr_rec_hoplug(cpu, 5, 0);
 
-	printk("CPU%u: Booted secondary processor\n", cpu);
+//	printk("CPU%u: Booted secondary processor\n", cpu);
 
 	preempt_disable();
 	aee_rr_rec_hoplug(cpu, 6, 0);

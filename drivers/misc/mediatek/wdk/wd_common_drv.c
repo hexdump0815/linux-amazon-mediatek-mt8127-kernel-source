@@ -230,7 +230,7 @@ void kicker_cpu_bind(int cpu)
 		//kthread_bind(wk_tsk[cpu], cpu);
 		WARN_ON_ONCE(set_cpus_allowed_ptr(wk_tsk[cpu], cpumask_of(cpu)) < 0);
 		
-		printk("[wdk]bind kicker thread[%d] to cpu[%d]\n",wk_tsk[cpu]->pid,cpu);
+//		printk("[wdk]bind kicker thread[%d] to cpu[%d]\n",wk_tsk[cpu]->pid,cpu);
 		wake_up_process(wk_tsk[cpu]);
 	}
 }
@@ -570,7 +570,7 @@ static int __cpuinit wk_cpu_callback(struct notifier_block *nfb, unsigned long a
 		mpcore_wdt_restart(WD_TYPE_NORMAL);
 #endif
 
-		printk("[WDK]cpu %d plug on kick wdt\n", hotcpu);
+//		printk("[WDK]cpu %d plug on kick wdt\n", hotcpu);
 		break;
 #ifdef CONFIG_HOTPLUG_CPU
 #ifdef CONFIG_LOCAL_WDT
@@ -584,14 +584,14 @@ static int __cpuinit wk_cpu_callback(struct notifier_block *nfb, unsigned long a
 
 		mtk_wdt_restart(WD_TYPE_NORMAL);	/* for KICK external wdt */
 #ifdef CONFIG_LOCAL_WDT
-		printk("[WDK]cpu %d plug off kick local wdt\n", hotcpu);
+//		printk("[WDK]cpu %d plug off kick local wdt\n", hotcpu);
 		/* kick local wdt */
 		/* mpcore_wdt_restart(WD_TYPE_NORMAL); */
 		/* disable local watchdog */
 		mpcore_wk_wdt_stop();
 #endif
 		wk_cpu_update_bit_flag(hotcpu, 0);
-		printk("[WDK]cpu %d plug off, kick wdt\n", hotcpu);
+//		printk("[WDK]cpu %d plug off, kick wdt\n", hotcpu);
 		break;
 #endif				/* CONFIG_HOTPLUG_CPU */
 	}
