@@ -88,7 +88,7 @@ static int wd_cpu_hot_plug_on_notify(int cpu)
 	int res = 0;
 	wk_cpu_update_bit_flag(cpu, 1);
 	mtk_wdt_restart(WD_TYPE_NOLOCK);	/* for KICK external wdt */
-	printk("WD wd_cpu_hot_plug_on_notify kick ext wd\n");
+//	printk("WD wd_cpu_hot_plug_on_notify kick ext wd\n");
 
 	return res;
 }
