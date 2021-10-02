@@ -1749,7 +1749,7 @@ void mtk_uart_enable_sleep(struct mtk_uart *uart)
 {
     u32 base = uart->base;
     reg_sync_writel(0x1, UART_SLEEP_EN);
-    printk("SLEEP_EN = 0x%x\n",UART_READ32(UART_SLEEP_EN));
+//    printk("SLEEP_EN = 0x%x\n",UART_READ32(UART_SLEEP_EN));
 }
 /*---------------------------------------------------------------------------*/
 void mtk_uart_init_debug_spinlock(void)
